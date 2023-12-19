@@ -1,0 +1,116 @@
+.btn-hvr {
+    background: #20716E none repeat scroll 0 0;
+    border: 0 none;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1 !important;
+    margin-top: 6px;
+    padding: 14px;
+    text-decoration: none;
+}
+/* curl top left */
+.hvr-curl-top-left {
+    backface-visibility: hidden; /* hide the back side of rotate dive */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    display: inline-block;
+    position: relative;
+    transform: translateZ(0px);
+    vertical-align: middle;
+}
+.hvr-curl-top-left::before {
+    background: rgba(0, 0, 0, 0) linear-gradient(135deg, white 45%, #aaaaaa 50%, #cccccc 56%, white 80%) repeat scroll 0 0; /*display smooth transitions between two or more specified colors */
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    content: "";
+    height: 0;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition-duration: 0.3s; /* time duration */ 
+    transition-property: width, height;
+    width: 0;
+    z-index: 1000;
+}
+.hvr-curl-top-left:hover::before, .hvr-curl-top-left:focus::before, .hvr-curl-top-left:active::before {
+    height: 25px;
+    width: 25px;
+}
+/* curol top right */
+.hvr-curl-top-right {
+    backface-visibility: hidden;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    display: inline-block;
+    position: relative;
+    transform: translateZ(0px);
+    vertical-align: middle;
+}
+.hvr-curl-top-right::before {
+    background: rgba(0, 0, 0, 0) linear-gradient(225deg, white 45%, #aaaaaa 50%, #cccccc 56%, white 80%) repeat scroll 0 0;  /*display smooth transitions between two or more specified colors */
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.4);
+    content: "";
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition-duration: 0.3s;
+    transition-property: width, height;
+    width: 0;
+}
+.hvr-curl-top-right:hover::before, .hvr-curl-top-right:focus::before, .hvr-curl-top-right:active::before {
+    height: 25px;
+    width: 25px;
+}
+/* curl buttom right */
+.hvr-curl-bottom-right {
+    backface-visibility: hidden;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    display: inline-block;
+    position: relative;
+    transform: translateZ(0px);
+    vertical-align: middle;
+}
+.hvr-curl-bottom-right::before {
+    background: rgba(0, 0, 0, 0) linear-gradient(315deg, white 45%, #aaaaaa 50%, #cccccc 56%, white 80%) repeat scroll 0 0;  /*display smooth transitions between two or more specified colors */
+    bottom: 0;
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.4);
+    content: "";
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    transition-duration: 0.3s;
+    transition-property: width, height;
+    width: 0;
+}
+.hvr-curl-bottom-right:hover::before, .hvr-curl-bottom-right:focus::before, .hvr-curl-bottom-right:active::before {
+    height: 25px;
+    width: 25px;
+}
+/*curl bottom left */
+.hvr-curl-bottom-left {
+    backface-visibility: hidden;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    display: inline-block;
+    position: relative;
+    transform: translateZ(0px);
+    vertical-align: middle;
+}
+.hvr-curl-bottom-left::before {
+    background: rgba(0, 0, 0, 0) linear-gradient(45deg, white 45%, #aaaaaa 50%, #cccccc 56%, white 80%) repeat scroll 0 0;  /*display smooth transitions between two or more specified colors */
+    bottom: 0;
+    box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.4);
+    content: "";
+    height: 0;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition-duration: 0.3s;/* time duration */
+    transition-property: width, height;
+    width: 0;
+}
+.hvr-curl-bottom-left:hover::before, .hvr-curl-bottom-left:focus::before, .hvr-curl-bottom-left:active::before {
+    height: 25px;
+    width: 25px;
+}

@@ -1,0 +1,77 @@
+	   		<div class="row">
+	    	<div class="col-xs-6">
+			<div class="list-group">
+	        	<a class="list-group-item"><h4 style="font-family: Mangal">Page List</h4></a>
+<!-- INSERT DATA INTO PAGES TABLE -->	        	
+                <?php
+                	if(isset($_POST['submitted']) == 1)
+					{
+						$title = mysqli_real_escape_string($dbc, $_POST['title']);
+						$label = mysqli_real_escape_string($dbc, $_POST['label']);
+						$header = mysqli_real_escape_string($dbc, $_POST['header']);
+						$body = mysqli_real_escape_string($dbc, $_POST['body']);
+						$q = "INSERT INTO pages (title, label, header, body) VALUES ('$title', '$label', '$header', '$body')";
+						$r = mysqli_query($dbc, $q);
+					
+						if($r)
+						{
+								$message = '<p>Page was added</p>';
+						} else
+						{
+							$message = '<p>Page coould not be added because: '.mysqli_error($dbc);
+						    echo '<p>'.$q.' </p> ';
+						}
+					}
+	          	?>
+<!-- END OF INSERTION -->
+<!-- CONTENT OF PAGES TABLE -->	          	
+                <?php
+					$q = "SELECT * FROM pages ORDER BY title ASC";
+	           		$r = mysqli_query($dbc, $q);
+					while($page_list = mysqli_fetch_assoc($r)) 
+					{ 
+						//$blurb = substr($page_list['body'], 0, 200);
+				?>
+						<a href="#" class="list-group-item"><h4 class="list-group-item-heading"><?php echo $page_list['title']; ?></h4>
+	                    	<!--<p class="list-group-item-text"><?php echo $blurb; ?></p>-->
+	                    </a>
+					<?php	
+					} ?>
+			</div>
+	        </div>
+			<div class="col-xs-6">
+	        	<?php
+	           	 	if(isset($message)) 
+	           	 	{
+	           	 		echo $message;
+	           	 	}
+	           	?>
+<!-- END -->	 
+
+formssssssss
+
+			<form action="index.php" method="post" role="form">
+	        		<div class="form-group has-error">
+	           				<label for="title">Title</label>
+	           				<input type="text" class="form-control" name="title" id="title" placeholder="page title">
+	           		</div>
+	           	    <div class="form-group has-error">
+	           				<label for="label">Label</label>
+	           				<input type="text" class="form-control" name="label" id="label" placeholder="page label">
+	           		</div>
+	           		<div class="form-group has-error">
+	           				<label for="header">Header</label>
+	           				<input type="text" class="form-control" name="header" id="header" placeholder="page header">
+	           		</div>
+	           		<div class="form-group has-error">
+	           				<label for="body">Body</label>
+	           				<textarea class="form-control" name="body" id="body" rows="9" placeholder="body"></textarea>
+	           		</div>
+	           		<button type="submit" class="btn btn-warning navbar-btn">Update Page</button>
+	           		<input type="hidden" name="submitted" value="1">
+	       </form>
+	       </div>
+		</div>
+	 	</div>
+		<?php include(D_TEMPLATE.'/footer.php'); ?>
+		<?php if($debug == 1) { include('widgets/debug.php'); } ?>

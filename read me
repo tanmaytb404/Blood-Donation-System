@@ -1,0 +1,39 @@
+a folder is created named widgets tob store the debug console codes.. if neccesary copy paste later..
+steps are given bellow:
+ 1. create folder named widgets
+ 2.create file debug.php
+ 3.cut the debug html codes insides the index folder
+ 4.leave the if block
+ 5.paste it over the debug file
+ 6.code the include statements in the index.php inside the if block
+ 
+ 
+ check box css code
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+ </div>
+ ...> 
+ 
+ 
+ to print the username and password just entered into the login oage...
+ 	 	<?php
+	           	  		 	
+							if($_POST)
+							{
+								echo $_POST['email'];
+								echo '<br>';
+								echo $_POST['password'];
+							
+							}
+							?>
+	           	  		
+	           	  		
+	           	  		
+	           	  		next task:
+	           	  		1.design user index page
+	           	  		2.add a dropdown menu which will contain the user login and admin login page
+	           	  		3.design the logo and paste over the top of the body
+	           	  		4.chooose the background color
+	           	  		5.create the dropdown menu for each navigation..
+	           	  		

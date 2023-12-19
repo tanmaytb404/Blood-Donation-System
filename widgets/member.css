@@ -1,0 +1,40 @@
+.form-group {
+	position: relative;
+}
+.form-control {
+	padding-right: 30px;
+}
+.input-glyph {
+	position: absolute;
+	color: green;
+	right: 10px;
+	pointer-events: none;
+	top: 10px;
+	display: none;
+	
+	form:not(.form-inline) label ~ & {
+		top: 34px; // input height
+	}
+}
+
+/*
+Duplicate the selector for classes and pseudo-classes because the entire selector will fail for browsers that don't support `:invalid`.
+*/
+
+/**
+ * THIS WILL FAIL
+ */
+.form-control.valid ~ .input-glyph,
+.form-control.valid:invalid ~ .input-glyph {
+	display: block;
+}
+
+.form-control.valid ~ .input-glyph {
+	display: block;
+}
+.form-control.valid:invalid ~ .input-glyph {
+	display: none;
+}
+.form-control:valid ~ .input-glyph {
+	display: block;
+}
